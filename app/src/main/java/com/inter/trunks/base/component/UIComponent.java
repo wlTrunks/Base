@@ -4,10 +4,9 @@ import android.content.Context;
 import android.support.annotation.CallSuper;
 import android.view.View;
 
-import java.lang.ref.WeakReference;
 
 public abstract class UIComponent {
-    private WeakReference<Context> context;
+    private Context context;
 
     public final void onViewCreated(Context context, View layout) {
         this.context = new WeakReference(context);
@@ -22,10 +21,10 @@ public abstract class UIComponent {
 
     @CallSuper
     public void onDestroy() {
-        context.clear();
+        this.context = null;
     }
 
     protected final Context getContext() {
-        return context.get();
+        return context;
     }
 }

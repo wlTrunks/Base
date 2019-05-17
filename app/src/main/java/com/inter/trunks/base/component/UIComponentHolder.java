@@ -1,4 +1,4 @@
-package com.inter.trunks.base.component;
+package ru.mos.polls.base.component;
 
 import android.content.Context;
 import android.support.v4.util.ArrayMap;
@@ -6,6 +6,7 @@ import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 public final class UIComponentHolder implements ComponentHolder {
     private final ArrayMap<Class<UIComponent>, UIComponent> hashComponent = new ArrayMap<>();
@@ -77,4 +78,3 @@ public final class UIComponentHolder implements ComponentHolder {
         }
     }
 }
-
